@@ -1,15 +1,25 @@
 import Modal from "../Modal/Modal";
-
+import { useEffect } from "react";
 import "./login.css";
 
 export default function Login(props) {
   document.body.classList.remove("body--register");
   document.body.classList.add("body--login");
 
-  const { handleChange, handleSubmit, handlePaging, showModal, setShowModal } =
-    props;
+  const {
+    handleChange,
+    handleSubmit,
+    handlePaging,
+    showModal,
+    setShowModal,
+    handleTraffic,
+  } = props;
 
   // console.log("Modal is:" + showModal);
+
+  useEffect(() => {
+    handleTraffic("unregisteredUser", "Login");
+  }, []);
 
   return (
     <>

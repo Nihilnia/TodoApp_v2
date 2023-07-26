@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { todozCollection, db } from "../Firebase";
+import { todozCollection, countEmCollection, db } from "../Firebase";
 import { onSnapshot, doc, addDoc, deleteDoc, setDoc } from "firebase/firestore";
 
 import Profile from "../Profile/Profile";
@@ -11,13 +11,31 @@ export default function Dashboard(props) {
   document.body.classList.add("gradient-background");
   document.body.classList.add("body--newTodo");
 
-  const { loggedUser } = props;
+  const { loggedUser, handleTraffic } = props;
+
+  //!_countEm
+  const ddate = new Date();
+  const yyyy = ddate.getFullYear();
+  let mm = ddate.getMonth() + 1;
+  let dd = ddate.getDate();
+
+  let formatDate = `${dd}/ ${mm}/ ${yyyy}`;
+
+  // console.log(formatDate);
+
+  const generateRandNumb = (max) => {
+    return Math.floor(Math.random() * max);
+  };
 
   const [tempToDo, setTempTodo] = useState({
     userName: "",
     toDo: "",
     situation: 0,
+    time: ddate,
+    date: formatDate,
+    randNum: generateRandNumb(444),
   });
+
   const [allTodoz, setAllTodoz] = useState(null);
   const [completedTodoz, setCompletedTodoz] = useState(null);
   const [waitingTodoz, setWaitingTodoz] = useState(null);
@@ -216,7 +234,13 @@ export default function Dashboard(props) {
       <div className="loading--after visibilityHidden gradient-background">
         <div className="navbar--back"></div>
         <nav>
-          <a onClick={() => setUserChoice("allTodoz")}>
+          <a
+            onClick={() => {
+              setUserChoice("allTodoz");
+              console.log("%cUser went to waiting todoz.", "color: orange");
+              handleTraffic(loggedUser.userName, "Page: allTodoz");
+            }}
+          >
             All Todoz&nbsp;&nbsp;
             <i className="fa-solid fa-list-check fa-lg"></i>
           </a>
@@ -225,6 +249,7 @@ export default function Dashboard(props) {
             onClick={() => {
               setUserChoice("waitingTodoz");
               console.log("%cUser went to waiting todoz.", "color: orange");
+              handleTraffic(loggedUser.userName, "Page: waitingTodoz");
             }}
           >
             Waiting to do&nbsp;&nbsp;
@@ -235,6 +260,7 @@ export default function Dashboard(props) {
             onClick={() => {
               setUserChoice("completedTodoz");
               console.log("%cUser went to completed todoz.", "color: orange");
+              handleTraffic(loggedUser.userName, "Page: completedTodoz");
             }}
           >
             Completed&nbsp;&nbsp;<i className="fa-solid fa-check fa-lg"></i>
@@ -244,6 +270,7 @@ export default function Dashboard(props) {
             onClick={() => {
               setUserChoice("Profile");
               console.log("%cUser went to Profile page.", "color: orange");
+              handleTraffic(loggedUser.userName, "Page: Profile");
             }}
           >
             Profile&nbsp;&nbsp;<i className="fa-solid fa-user fa-lg"></i>

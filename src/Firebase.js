@@ -23,3 +23,4 @@ const analytics = getAnalytics(app);
 export const db = getFirestore(app);
 export const userzCollection = collection(db, "userz");
 export const todozCollection = collection(db, "todoz");
+export const countEmCollection = collection(db, "countEm");

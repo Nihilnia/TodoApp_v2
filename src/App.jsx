@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { userzCollection, db } from "./Firebase";
+import { userzCollection, countEmCollection, db } from "./Firebase";
 import { onSnapshot, doc, addDoc, deleteDoc, setDoc } from "firebase/firestore";
 
 import Login from "./Login/Login.jsx";
@@ -35,6 +35,34 @@ export default function App() {
   const [newTodo, setNewTodo] = useState({
     toDoName: "",
   });
+
+  //!_countEm
+  const ddate = new Date();
+  const yyyy = ddate.getFullYear();
+  let mm = ddate.getMonth() + 1;
+  let dd = ddate.getDate();
+
+  let formatDate = `${dd}/ ${mm}/ ${yyyy}`;
+
+  // console.log(formatDate);
+
+  const generateRandNumb = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
+  const handleTraffic = (whoIsIt, fPage) => {
+    const doCount = async () => {
+      const newCountRef = await addDoc(countEmCollection, {
+        time: ddate,
+        date: formatDate,
+        page: fPage != null ? fPage : page,
+        randNum: generateRandNumb(1000),
+        user: whoIsIt,
+      });
+    };
+
+    doCount();
+  };
 
   useEffect(() => {
     //? Watching the Database
@@ -87,13 +115,19 @@ export default function App() {
       if (page == "Register") {
         //TODO: Check if the username is available.
         if (getUserInfo.length == 0) {
-          console.log("mor yazma");
+          // console.log("mor yazma");
 
-          console.log("TempData");
-          console.log(tempData);
+          // console.log("TempData");
+          // console.log(tempData);
 
           const newUser = async () => {
-            const refRegister = await addDoc(userzCollection, tempData);
+            const refRegister = await addDoc(userzCollection, {
+              userName: tempData.userName,
+              passWord: tempData.passWord,
+              time: ddate,
+              date: formatDate,
+              randNum: generateRandNumb(444),
+            });
           };
 
           newUser();
@@ -157,6 +191,7 @@ export default function App() {
           handlePaging={handlePaging}
           showModal={showModal}
           setShowModal={setShowModal}
+          handleTraffic={handleTraffic}
         />
       )}
       {page == "Register" && (
@@ -166,9 +201,12 @@ export default function App() {
           handlePaging={handlePaging}
           showModal={showModal}
           setShowModal={setShowModal}
+          handleTraffic={handleTraffic}
         />
       )}
-      {page == "Dashboard" && <Dashboard loggedUser={loggedUser} />}
+      {page == "Dashboard" && (
+        <Dashboard loggedUser={loggedUser} handleTraffic={handleTraffic} />
+      )}
     </>
   );
 }

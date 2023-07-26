@@ -5,8 +5,16 @@ export default function Register(props) {
   document.body.classList.remove("body--login");
   document.body.classList.add("body--register");
 
-  const { handleChange, handleSubmit, handlePaging, showModal, setShowModal } =
-    props;
+  const {
+    handleChange,
+    handleSubmit,
+    handlePaging,
+    showModal,
+    setShowModal,
+    handleTraffic,
+  } = props;
+
+  handleTraffic("unregisteredUser", "Login");
 
   return (
     <>
