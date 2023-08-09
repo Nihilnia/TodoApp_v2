@@ -5,7 +5,6 @@ A full-stack web application that allows you to create, manage and organize your
 You can add new tasks, mark tasks as completed.  <br/>
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [Technologies](#technologies)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -27,7 +26,7 @@ The technologies I used for this project include:
 - ![Photoshop](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/Photoshop.svg)
 
 ## Usage
-You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Netlify.
+You can [view the live demo](https://tod0appv2.netlify.app) hosted on Netlify.
 Simply go to website, create your own account and login. <br/>
 Search for anything; Tracks, artists and playlists.
 If you allow the cookies you can play the songs. <br/>
