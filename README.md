@@ -1,7 +1,7 @@
 # Todo App [![Live on Netlify](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e14078343be44292c313b478de702e34fcdf556e/HostedOn_Netlify.svg)](https://tod0appv2.netlify.app) [![Live Demo](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e14078343be44292c313b478de702e34fcdf556e/liveDemo_Blue.svg)](https://tod0appv2.netlify.app)
 
 ![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_2.png)<br/>
-A full-stack todo app project that allows you to create your own account, search & follow for songs, artists and playlists. <br/>
+A full-stack web application that allows you to create, manage and organize your tasks. You can add new tasks, mark tasks as completed.  <br/>
 
 ## Table of Contents
 - [Introduction](#introduction)
