@@ -36,8 +36,7 @@ If you add a new todo or mark them as completed, it' s gonna save on your own pr
 At your profile page you can see how many todos you have and how many of them waiting to get completed. <br/>
 You can see them in their own pages.
 
-<img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/thumbnail_5.png" width="830">
-<img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/thumbnail_4.png" width="830">
+<img src="https://github.com/Nihilnia/TodoApp_v2/blob/main/public/gif_1.gif" width="830">
 
 
 <!-- <h2>Profile</h2>
