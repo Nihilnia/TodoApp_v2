@@ -1,6 +1,6 @@
 # Todo App [![Live on Netlify](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e14078343be44292c313b478de702e34fcdf556e/HostedOn_Netlify.svg)](https://tod0appv2.netlify.app) [![Live Demo](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e14078343be44292c313b478de702e34fcdf556e/liveDemo_Blue.svg)](https://tod0appv2.netlify.app)
 
-![](https://raw.githubusercontent.com/Nihilnia/TodoApp_v2/main/public/thumbnail_2.png)<br/>
+![](https://raw.githubusercontent.com/Nihilnia/TodoApp_v2/main/public/thumbnail_0.png)<br/>
 A full-stack web application that allows you to create, manage and organize your tasks. <br/>
 You can add new tasks, mark tasks as completed.  <br/>
 
